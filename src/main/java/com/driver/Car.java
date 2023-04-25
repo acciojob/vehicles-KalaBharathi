@@ -9,16 +9,33 @@ public class Car extends Vehicle {
     private int currentGear;
     private int seats;
 
-    public int getGear() {
-        return gears;
-    }
-
-    public void setGear(int gears) {
+    public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
+        super(name);
+        this.wheels = wheels;
+        this.doors = doors;
         this.gears = gears;
+        this.isManual = isManual;
+        this.type = type;
+        this.seats = seats;
+        this.currentGear = 1;
+
+        //Hint: Car extends Vehicle
     }
 
     public int getWheels() {
         return wheels;
+    }
+
+    public void setWheels(int wheels) {
+        this.wheels = wheels;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getDoors() {
@@ -61,48 +78,13 @@ public class Car extends Vehicle {
         this.seats = seats;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setWheels(int wheels) {
-        this.wheels = wheels;
-    }
-
-    public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
-        //Hint: Car extends Vehicle
-        super(name);
-        this.wheels=wheels;
-        this.doors=doors;
-        this.gears=gears;
-        this.isManual=isManual;
-        this.type=type;
-        this.seats=seats;
-        this.currentGear=1;
-    }
-
-    public Car(String name) {
-        super(name);
-    }
-
-    public Car(String name, boolean isManual) {
-        super(name);
-        this.isManual=isManual;
-    }
-
     public void changeGear(int newGear){
-        this.currentGear=newGear;
-
+        this.currentGear = newGear;
         System.out.println("changeGear method called - The gear is changed to: " + currentGear);
     }
 
     public void changeSpeed(int newSpeed, int newDirection){
-        super.move(newSpeed,newDirection);
-
+        super.move(newSpeed, newDirection);
         System.out.println("changeSpeed method called - The speed is changed to: " + newSpeed + ", and the direction is changed to: " + newDirection + " degrees");
     }
 }
