@@ -6,6 +6,7 @@ public class Vehicle {
     private int currentSpeed;
     private int currentDirection;
 
+
     public int getCurrentSpeed() {
         return currentSpeed;
     }
